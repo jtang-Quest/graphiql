@@ -53,8 +53,8 @@ export class GraphQLWorker {
     return this._languageService.getSchemaResponse();
   }
 
-  async setSchema(schema: RawSchema): Promise<GraphQLSchema> {
-    return this._languageService.setSchema(schema);
+  async setSchema(schema: RawSchema): Promise<void> {
+    await this._languageService.setSchema(schema);
   }
 
   async loadSchema(_uri?: string): Promise<GraphQLSchema> {

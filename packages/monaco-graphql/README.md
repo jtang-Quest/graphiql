@@ -95,6 +95,15 @@ You can also just change the schema uri directly!
 GraphQLAPI.setSchemaUri('https://localhost:1234/graphql');
 ```
 
+#### `GraphQLAPI.setSchema()`
+
+With either an AST string or an `introspectionQuery` JSON, set the schema directly, bypassing the schema fetcher.
+We can't use a programattic `GraphQLSchema` instance, since this needs to be used by the webworker.
+
+```ts
+GraphQLAPI.setSchema(rawSchema);
+```
+
 #### `GraphQLAPI.setModeConfiguration()`
 
 This is where you can toggle monaco language features. all are enabled by default.
